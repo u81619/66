@@ -110,8 +110,129 @@
     </div>
   </nav>
 
-<!-- زر قناة التليكرام -->
+<!-- CSS داخلي -->
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to right top, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #66ccff !important;
+      text-shadow: 0 0 10px #66ccff;
+    }
+
+    /* زر قناة التليكرام - RGP Glow */
+    .btn-telegram {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 0 10px rgba(255, 65, 108, 0.7), 0 0 20px rgba(255, 75, 43, 0.6);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-telegram:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 75, 43, 0.9), 0 0 30px rgba(255, 65, 108, 0.8);
+      text-decoration: none;
+    }
+
+    .container h2 {
+      color: #ffffff;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    }
+
+    .app-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-success {
+      background: linear-gradient(to left, #00c9ff, #92fe9d);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-success:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.7);
+    }
+
+    footer {
+      margin-top: 4rem;
+      background-color: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+    .card:nth-child(5) { animation-delay: 1s; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">66 ZONE</a>
+
+      <!-- زر قناة التليكرام -->
       <a href="https://t.me/YOUR_CHANNEL" class="btn btn-telegram ms-3" target="_blank">📢 قناتنا على التليجرام</a>
+
+      <form class="d-flex ms-auto" role="search">
+        <input class="form-control me-2" type="search" placeholder="ابحث عن تطبيق..." aria-label="بحث">
+      </form>
+    </div>
+  </nav>
   
   <!-- Main Content -->
   <div class="container pt-5 mt-5">
