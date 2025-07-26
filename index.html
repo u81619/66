@@ -9,7 +9,7 @@
     body { background-color: #f8f9fa; font-family: 'Cairo', sans-serif; }
     .card { margin-bottom: 1rem; }
     .app-icon { width: 64px; height: 64px; border-radius: 12px; }
-    .admin-form { max-width: 400px; margin: 20px auto; }
+    #admin-form { display: none; }
   </style>
 </head>
 <body>
@@ -20,82 +20,73 @@
         <input class="form-control me-2" type="search" placeholder="ابحث عن تطبيق..." aria-label="Search">
       </form>
     </div>
-  </nav>  <div class="container">
+  </nav>  <div class="container mb-4">
+    <h4>تسجيل دخول المسؤول</h4>
+    <div class="row g-2 align-items-center mb-3">
+      <div class="col-md-3">
+        <input type="text" id="username" class="form-control" placeholder="اسم المستخدم">
+      </div>
+      <div class="col-md-3">
+        <input type="password" id="password" class="form-control" placeholder="كلمة المرور">
+      </div>
+      <div class="col-md-2">
+        <button onclick="login()" class="btn btn-primary">دخول</button>
+      </div>
+    </div><div id="admin-form" class="card p-3">
+  <h5 class="mb-3">إضافة تطبيق جديد</h5>
+  <div class="row g-2">
+    <div class="col-md-3"><input type="text" id="appName" class="form-control" placeholder="اسم التطبيق"></div>
+    <div class="col-md-3"><input type="text" id="appVersion" class="form-control" placeholder="الإصدار"></div>
+    <div class="col-md-3"><input type="text" id="appSize" class="form-control" placeholder="الحجم"></div>
+    <div class="col-md-3"><input type="text" id="appLink" class="form-control" placeholder="رابط التحميل"></div>
+    <div class="col-md-12 pt-2">
+      <button class="btn btn-success" onclick="addApp()">إضافة</button>
+    </div>
+  </div>
+</div>
+
+  </div>  <div class="container">
     <h2 class="mb-4">أحدث التطبيقات المهكرة</h2>
-    <div id="app-list" class="row">
-      <!-- البطاقات يتم إضافتها هنا عبر الجافاسكربت بعد تسجيل الدخول -->
-    </div><div id="admin-area" class="admin-form" style="display:none">
-  <h4 class="mb-3">إضافة تطبيق جديد</h4>
-  <input id="appName" class="form-control mb-2" placeholder="اسم التطبيق">
-  <input id="appVersion" class="form-control mb-2" placeholder="الإصدار">
-  <input id="appSize" class="form-control mb-2" placeholder="الحجم">
-  <input id="appLink" class="form-control mb-2" placeholder="رابط التحميل">
-  <input id="appIcon" class="form-control mb-2" placeholder="رابط الأيقونة">
-  <button class="btn btn-primary w-100" onclick="addApp()">إضافة</button>
-</div>
-
-<div id="login-form" class="admin-form">
-  <h4 class="mb-3">دخول وضع المشرق</h4>
-  <input id="username" class="form-control mb-2" placeholder="اسم المستخدم">
-  <input id="password" type="password" class="form-control mb-2" placeholder="كلمة المرور">
-  <button class="btn btn-dark w-100" onclick="login()">دخول</button>
-</div>
-
+    <div class="row" id="apps-container">
+      <!-- بطاقات التطبيقات الحالية موجودة هنا -->
+      <!-- يمكنك لصق بطاقات التطبيقات هنا -->
+    </div>
   </div>  <footer class="bg-dark text-white text-center py-3 mt-5">
     جميع الحقوق محفوظة © 2025 - TraidMod النسخة العربية
   </footer>  <script>
-    const defaultApps = [
-      {name: "WhatsApp MOD", version: "2.24.5", size: "60MB", link: "https://example.com/whatsappmod.apk", icon: "app-icon.png"},
-      {name: "Minecraft مهكرة", version: "1.20", size: "140MB", link: "https://example.com/minecraftmod.apk", icon: "game-icon.png"},
-      {name: "Snapchat Plus", version: "12.45", size: "85MB", link: "https://example.com/snapplus.apk", icon: "snap-icon.png"},
-      {name: "PUBG مهكرة", version: "3.1.0", size: "720MB", link: "https://example.com/pubgmod.apk", icon: "pubg-icon.png"},
-      {name: "GBWhatsApp", version: "17.52", size: "55MB", link: "https://example.com/gbwhatsapp.apk", icon: "gb-icon.png"},
-    ];
-
-    function renderApps() {
-      const container = document.getElementById("app-list");
-      container.innerHTML = "";
-      defaultApps.forEach(app => {
-        container.innerHTML += 
-          <div class="col-md-4">
-            <div class="card shadow">
-              <div class="card-body d-flex align-items-center">
-                <img src="${app.icon}" alt="أيقونة" class="app-icon me-3">
-                <div>
-                  <h5 class="card-title mb-1">${app.name}</h5>
-                  <p class="mb-1">إصدار: ${app.version} | الحجم: ${app.size}</p>
-                  <a href="${app.link}" class="btn btn-success btn-sm" target="_blank">تحميل مباشر</a>
-                </div>
-              </div>
-            </div>
-          </div>;
-      });
-    }
-
     function login() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      if(user === "admin" && pass === "1234") {
-        document.getElementById("login-form").style.display = "none";
-        document.getElementById("admin-area").style.display = "block";
-        renderApps();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if (user === 'admin' && pass === '100iisbanp6') {
+        document.getElementById('admin-form').style.display = 'block';
+        alert('تم تسجيل الدخول بنجاح');
       } else {
-        alert("بيانات خاطئة!");
+        alert('بيانات الدخول غير صحيحة');
       }
     }
 
     function addApp() {
-      const name = document.getElementById("appName").value;
-      const version = document.getElementById("appVersion").value;
-      const size = document.getElementById("appSize").value;
-      const link = document.getElementById("appLink").value;
-      const icon = document.getElementById("appIcon").value;
-      if(name && version && size && link && icon) {
-        defaultApps.push({ name, version, size, link, icon });
-        renderApps();
-      } else {
-        alert("يرجى ملء جميع الحقول!");
-      }
+      const name = document.getElementById('appName').value;
+      const version = document.getElementById('appVersion').value;
+      const size = document.getElementById('appSize').value;
+      const link = document.getElementById('appLink').value;
+
+      const card = document.createElement('div');
+      card.className = 'col-md-4';
+      card.innerHTML = 
+        <div class="card shadow">
+          <div class="card-body d-flex align-items-center">
+            <img src="app-icon.png" alt="أيقونة التطبيق" class="app-icon me-3">
+            <div>
+              <h5 class="card-title mb-1">${name}</h5>
+              <p class="mb-1">إصدار: ${version} | الحجم: ${size}</p>
+              <a href="${link}" class="btn btn-success btn-sm" target="_blank">تحميل مباشر</a>
+            </div>
+          </div>
+        </div>
+      ;
+
+      document.getElementById('apps-container').appendChild(card);
     }
   </script></body>
 </html>
