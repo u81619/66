@@ -1,135 +1,196 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>66 ZONE - تحميل التطبيقات المهكرة</title>
-  <meta name="description" content="موقع لتحميل التطبيقات والألعاب المهكرة APK">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>66 ZONE - تحميل التطبيقات المهكرة</title>
+  <meta name="description" content="موقع لتحميل التطبيقات والألعاب المهكرة APK">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700\&display=swap">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background: linear-gradient(to right top, #0f2027, #203a43, #2c5364);
-      color: #fff;
-    }
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to right top, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
 
-    .navbar {
-      background-color: rgba(0, 0, 0, 0.6) !important;
-      backdrop-filter: blur(10px);
-    }
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      backdrop-filter: blur(10px);
+    }
 
-    .navbar-brand {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #66ccff !important;
-      text-shadow: 0 0 10px #66ccff;
-    }
+    .navbar-brand {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #66ccff !important;
+      text-shadow: 0 0 10px #66ccff;
+    }
 
-    .container h2 {
-      color: #ffffff;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px rgba(255,255,255,0.2);
-    }
+    .container h2 {
+      color: #ffffff;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
 
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
-      transition: transform 0.3s ease;
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    }
 
-    .app-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 15px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    }
+    .app-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
 
-    .btn-success {
-      background: linear-gradient(to left, #00c9ff, #92fe9d);
-      color: #000;
-      font-weight: bold;
-      border: none;
-      box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
-      transition: all 0.3s ease-in-out;
-    }
+    .btn-success {
+      background: linear-gradient(to left, #00c9ff, #92fe9d);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
+      transition: all 0.3s ease-in-out;
+    }
 
-    .btn-success:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 255, 170, 0.7);
-    }
+    .btn-success:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.7);
+    }
 
-    footer {
-      margin-top: 4rem;
-      background-color: rgba(0,0,0,0.3);
-      backdrop-filter: blur(10px);
-      color: #ccc;
-      font-size: 0.9rem;
-    }
+    footer {
+      margin-top: 4rem;
+      background-color: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      color: #ccc;
+      font-size: 0.9rem;
+    }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-    .card:nth-child(1) { animation-delay: 0.2s; }
-    .card:nth-child(2) { animation-delay: 0.4s; }
-    .card:nth-child(3) { animation-delay: 0.6s; }
-    .card:nth-child(4) { animation-delay: 0.8s; }
-    .card:nth-child(5) { animation-delay: 1s; }
-  </style>
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+    .card:nth-child(5) { animation-delay: 1s; }
+    .card:nth-child(6) { animation-delay: 1.2s; }
+    .card:nth-child(7) { animation-delay: 1.4s; }
+    .card:nth-child(8) { animation-delay: 1.6s; }
+    .card:nth-child(9) { animation-delay: 1.8s; }
+    .card:nth-child(10) { animation-delay: 2s; }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">66 ZONE</a>
-      <form class="d-flex ms-auto" role="search">
-        <input class="form-control me-2" type="search" placeholder="ابحث عن تطبيق..." aria-label="بحث">
-      </form>
-    </div>
-  </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">66 ZONE</a>
+      <form class="d-flex ms-auto" role="search">
+        <input class="form-control me-2" type="search" placeholder="ابحث عن تطبيق..." aria-label="بحث">
+      </form>
+    </div>
+  </nav>
 
-  <!-- Main Content -->
-  <div class="container pt-5 mt-5">
-    <h2 class="text-center mb-5">🚀 أحدث التطبيقات المهكرة</h2>
-    <div class="row gy-4">
+  <!-- Main Content -->
+  <div class="container pt-5 mt-5">
+    <h2 class="text-center mb-5">🚀 أحدث التطبيقات المهكرة</h2>
+    <div class="row gy-4">
 
-      <!-- Example Card (كرر البطاقات بنفس التنسيق) -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Screenshot 2025-07-26 132156.png" alt="أيقونة التطبيق" class="app-icon me-3">
-            <div>
-              <h5 class="mb-1 text-white">Subway Surfers</h5>
-              <p class="mb-2 text-light">إصدار: آخر | الحجم: 185MB</p>
-              <a href="https://www.mediafire.com/file/kxf5ld6ixo5djnp/subway-surfer_3.49.0.apk/file?dkey=i0xa1diajdc&r=943" class="btn btn-success btn-sm" target="_blank">⬇ تحميل مباشر</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- بطاقة 1 -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+            <img src="img/subway.png" alt="Subway Surfers" class="app-icon me-3">
+            <div>
+              <h5 class="mb-1 text-white">Subway Surfers</h5>
+              <p class="mb-2 text-light">إصدار: 3.49.0 | الحجم: 185MB</p>
+              <a href="https://www.mediafire.com/file/example1.apk" class="btn btn-success btn-sm" target="\_blank">⬇ تحميل مباشر</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <!-- باقي البطاقات نفسها، فقط غير النصوص والروابط -->
+      <!-- بطاقة 2 -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+            <img src="img/pubg.png" alt="PUBG Mobile" class="app-icon me-3">
+            <div>
+              <h5 class="mb-1 text-white">PUBG Mobile</h5>
+              <p class="mb-2 text-light">إصدار: 2.7 | الحجم: 720MB</p>
+              <a href="https://www.mediafire.com/file/example2.apk" class="btn btn-success btn-sm" target="\_blank">⬇ تحميل مباشر</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- بطاقة 3 -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+            <img src="img/spotify.png" alt="Spotify Premium" class="app-icon me-3">
+            <div>
+              <h5 class="mb-1 text-white">Spotify Premium</h5>
+              <p class="mb-2 text-light">إصدار: 8.8.32 | الحجم: 65MB</p>
+              <a href="https://www.mediafire.com/file/example3.apk" class="btn btn-success btn-sm" target="\_blank">⬇ تحميل مباشر</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- بطاقة 4 -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+            <img src="img/gbwhatsapp.png" alt="GB WhatsApp" class="app-icon me-3">
+            <div>
+              <h5 class="mb-1 text-white">GB WhatsApp</h5>
+              <p class="mb-2 text-light">إصدار: 17.52 | الحجم: 60MB</p>
+              <a href="https://www.mediafire.com/file/example4.apk" class="btn btn-success btn-sm" target="\_blank">⬇ تحميل مباشر</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- بطاقة 5 -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+            <img src="img/netflix.png" alt="Netflix MOD" class="app-icon me-3">
+            <div>
+              <h5 class="mb-1 text-white">Netflix MOD</h5>
+              <p class="mb-2 text-light">إصدار: 7.118.0 | الحجم: 48MB</p>
+           <a href="https://www.mediafire.com/file/example4.apk" class="btn btn-success btn-sm" target="\\\_blank">⬇  تحميل مباشر</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- باقي البطاقات نفسها، فقط غير النصوص والروابط -->
 
     </div>
   </div>
