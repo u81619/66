@@ -3,55 +3,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="موقع لتحميل التطبيقات والألعاب المهكرة APK">
-  <title>66 ZONE</title>
+  <title>مكتبة التطبيقات المهكرة</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <style>
     body { background-color: #f8f9fa; font-family: 'Cairo', sans-serif; }
     .card { margin-bottom: 1rem; }
     .app-icon { width: 64px; height: 64px; border-radius: 12px; }
+    .admin-form { max-width: 400px; margin: 20px auto; }
   </style>
 </head>
-<body>  <nav class="navbar navbar-dark bg-dark mb-4">
+<body>
+  <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container">
-      <a class="navbar-brand" href="#">66 ZONE العربي</a>
+      <a class="navbar-brand" href="#">TraidMod العربي</a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="ابحث عن تطبيق..." aria-label="Search">
       </form>
     </div>
   </nav>  <div class="container">
-    <h2 class="mb-4">أحدث التطبيقات المهكرة</h2><div class="row">
-  <!-- بطاقة تطبيق 1 -->
-  <div class="col-md-4">
-    <div class="card shadow">
-      <div class="card-body d-flex align-items-center">
-        <img src="app-icon.png" alt="أيقونة التطبيق" class="app-icon me-3">
-        <div>
-          <h5 class="card-title mb-1">CapCut Pro</h5>
-          <p class="mb-1">إصدار: اخر اصدار | الحجم: 206MB</p>
-          <a href="#" class="https://www.mediafire.com/file/a48m4pk38uhz4f7/CapCut_v13.9.0[66+ZONE].apk/file">تحميل مباشر</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <h2 class="mb-4">أحدث التطبيقات المهكرة</h2>
+    <div id="app-list" class="row">
+      <!-- البطاقات يتم إضافتها هنا عبر الجافاسكربت بعد تسجيل الدخول -->
+    </div><div id="admin-area" class="admin-form" style="display:none">
+  <h4 class="mb-3">إضافة تطبيق جديد</h4>
+  <input id="appName" class="form-control mb-2" placeholder="اسم التطبيق">
+  <input id="appVersion" class="form-control mb-2" placeholder="الإصدار">
+  <input id="appSize" class="form-control mb-2" placeholder="الحجم">
+  <input id="appLink" class="form-control mb-2" placeholder="رابط التحميل">
+  <input id="appIcon" class="form-control mb-2" placeholder="رابط الأيقونة">
+  <button class="btn btn-primary w-100" onclick="addApp()">إضافة</button>
+</div>
 
-  <!-- بطاقة تطبيق 2 -->
-  <div class="col-md-4">
-    <div class="card shadow">
-      <div class="card-body d-flex align-items-center">
-        <img src="game-icon.png" alt="أيقونة اللعبة" class="app-icon me-3">
-        <div>
-          <h5 class="card-title mb-1">Minecraft مهكرة</h5>
-          <p class="mb-1">إصدار: 1.20 | الحجم: 140MB</p>
-          <a href="#" class="btn btn-success btn-sm">تحميل مباشر</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- أضف المزيد هنا -->
+<div id="login-form" class="admin-form">
+  <h4 class="mb-3">دخول وضع المشرق</h4>
+  <input id="username" class="form-control mb-2" placeholder="اسم المستخدم">
+  <input id="password" type="password" class="form-control mb-2" placeholder="كلمة المرور">
+  <button class="btn btn-dark w-100" onclick="login()">دخول</button>
 </div>
 
   </div>  <footer class="bg-dark text-white text-center py-3 mt-5">
-    جميع الحقوق محفوظة © 2025 - ZONE 66 النسخة العربية
-  </footer></body>
+    جميع الحقوق محفوظة © 2025 - TraidMod النسخة العربية
+  </footer>  <script>
+    const defaultApps = [
+      {name: "WhatsApp MOD", version: "2.24.5", size: "60MB", link: "https://example.com/whatsappmod.apk", icon: "app-icon.png"},
+      {name: "Minecraft مهكرة", version: "1.20", size: "140MB", link: "https://example.com/minecraftmod.apk", icon: "game-icon.png"},
+      {name: "Snapchat Plus", version: "12.45", size: "85MB", link: "https://example.com/snapplus.apk", icon: "snap-icon.png"},
+      {name: "PUBG مهكرة", version: "3.1.0", size: "720MB", link: "https://example.com/pubgmod.apk", icon: "pubg-icon.png"},
+      {name: "GBWhatsApp", version: "17.52", size: "55MB", link: "https://example.com/gbwhatsapp.apk", icon: "gb-icon.png"},
+    ];
+
+    function renderApps() {
+      const container = document.getElementById("app-list");
+      container.innerHTML = "";
+      defaultApps.forEach(app => {
+        container.innerHTML += 
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body d-flex align-items-center">
+                <img src="${app.icon}" alt="أيقونة" class="app-icon me-3">
+                <div>
+                  <h5 class="card-title mb-1">${app.name}</h5>
+                  <p class="mb-1">إصدار: ${app.version} | الحجم: ${app.size}</p>
+                  <a href="${app.link}" class="btn btn-success btn-sm" target="_blank">تحميل مباشر</a>
+                </div>
+              </div>
+            </div>
+          </div>;
+      });
+    }
+
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if(user === "admin" && pass === "1234") {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("admin-area").style.display = "block";
+        renderApps();
+      } else {
+        alert("بيانات خاطئة!");
+      }
+    }
+
+    function addApp() {
+      const name = document.getElementById("appName").value;
+      const version = document.getElementById("appVersion").value;
+      const size = document.getElementById("appSize").value;
+      const link = document.getElementById("appLink").value;
+      const icon = document.getElementById("appIcon").value;
+      if(name && version && size && link && icon) {
+        defaultApps.push({ name, version, size, link, icon });
+        renderApps();
+      } else {
+        alert("يرجى ملء جميع الحقول!");
+      }
+    }
+  </script></body>
 </html>
